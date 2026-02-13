@@ -1,7 +1,7 @@
 <x-layout>
     <main class="py-10">
 
-        <section class="bg-white max-w-[600px] mx-auto p-10 border-2 mt-4">
+        <section class="bg-white max-w-[600px] mx-auto p-10 pb-6 border-2 mt-4">
 
             <h1 class="font-bold text-3xl">
                 Faça login
@@ -11,7 +11,7 @@
                 Insira seus dados para acessar sua conta
             </p>
 
-            <form action="/login" method="POST" class="flex flex-col">
+            <form action="{{ route('auth.login') }}" method="POST" class="flex flex-col">
                 @csrf
 
                 <div class="flex flex-col gap-2 mb-2">
@@ -45,7 +45,9 @@
 
                 </form>
 
-
+                <p class="text-center mt-4">
+                    Não tem uma conta? <a href="{{ route('site.register') }}" class="underline hover:opacity-50 transition">Registrar-se</a>
+                </p>
 
             </section>
         </main>
